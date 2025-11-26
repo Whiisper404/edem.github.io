@@ -258,7 +258,7 @@ header {
 
 .slide-content h2 {
     font-family: 'Playfair Display', serif;
-    color: #a4afa6;
+    color: #a4c3a6;
     font-size: 3rem;
     font-weight: 700;
     margin-bottom: 20px;
@@ -2742,4 +2742,5 @@ footer {
         height: 60vh;
     }
 }
+
 
