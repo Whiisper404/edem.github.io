@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Эдем - Косметика и парфюмерия</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-links">
+                    <a href="#">Доставка</a>
+                    <a href="#">Оплата</a>
+                    <a href="#">Контакты</a>
+                </div>
+                <div class="auth-links">
+                    <a href="auth.html" id="auth-link">Войти</a>
+                    <a href="profile.html" id="profile-link" style="display:none;">Личный кабинет</a>
+                </div>
+            </div>
+        </div>
+        <div class="main-header">
+            <div class="container">
+                <div class="logo">
+                    <img src="logo.png" alt="Эдем" class="logo-img">
+                    <div class="logo-text">
+                        <h1>Эдем</h1>
+                    </div>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Поиск товаров...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="header-actions">
+                    <a href="auth.html" class="user-icon"><i class="fas fa-user"></i></a>
+                    <a href="cart.html" class="cart-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <div class="container">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="#">Новинки</a></li>
+                    <li><a href="#">Акции</a></li>
+                    <li><a href="#">Бренды</a></li>
+                    <li><a href="#">Подарки</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="banner-slider">
+            <div class="slider-container">
+                <div class="slider-wrapper">
+                    <div class="slide active">
+                        <img src="img/banner1.png" alt="Баннер 1">
+                        <div class="slide-content">
+                            <h2>Новая коллекция Flower knows</h2>
+                            <p>Откройте для себя уникальные ароматы</p>
+                            <a href="catalog.html" class="btn">Смотреть коллекцию</a>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="img/banner2.png" alt="Баннер 2">
+                        <div class="slide-content">
+                            <h2>Скидки до 50%</h2>
+                            <p>Только этой неделей специальные предложения</p>
+                            <a href="catalog.html" class="btn">Посмотреть акции</a>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="img/banner3.png" alt="Баннер 3">
+                        <div class="slide-content">
+                            <h2>Бесплатная доставка</h2>
+                            <p>При заказе от 3000 рублей</p>
+                            <a href="catalog.html" class="btn">Подробнее</a>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="img/banner4.png" alt="Баннер 4">
+                        <div class="slide-content">
+                            <h2>Новинки сезона</h2>
+                            <p>Самые ожидаемые продукты уже в продаже</p>
+                            <a href="catalog.html" class="btn">Смотреть новинки</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="slider-next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="slider-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                    <span class="dot" data-slide="3"></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="categories">
+            <div class="container">
+                <h2>Категории</h2>
+                <div class="category-grid">
+                    <div class="category-card">
+                        <img src="https://optim.tildacdn.com/stor6135-3065-4537-a639-613761383930/-/format/webp/96287367.jpg.webp" alt="Парфюмерия">
+                        <h3>Парфюмерия</h3>
+                    </div>
+                    <div class="category-card">
+                        <img src="https://pcdn.goldapple.ru/p/p/19000230926/web/696d67416464325064708ddc579354ea361fullhd.webp" alt="Уход за лицом">
+                        <h3>Уход за лицом</h3>
+                    </div>
+                    <div class="category-card">
+                        <img src="https://optim.tildacdn.com/stor3730-6533-4761-b266-616464626633/-/format/webp/58750539.jpg.webp" alt="Декоративная косметика">
+                        <h3>Декоративная косметика</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-products">
+            <div class="container">
+                <h2>Популярные товары</h2>
+                <div class="products-grid" id="featured-products">
+                </div>
+            </div>
+        </section>
+        <section class="personal-recommendations">
+        <div class="container">
+            <h2>Рекомендуем именно вам</h2>
+            <div class="products-grid" id="personal-recommendations">
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Эдем</h3>
+                    <p>Магазин косметики и парфюмерии с 202- года. Мы предлагаем только качественные товары от проверенных брендов.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Категории</h3>
+                    <ul>
+                        <li><a href="#">Парфюмерия</a></li>
+                        <li><a href="#">Уход за лицом</a></li>
+                        <li><a href="#">Декоративная косметика</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Помощь</h3>
+                    <ul>
+                        <li><a href="#">Доставка и оплата</a></li>
+                        <li><a href="#">Возврат</a></li>
+                        <li><a href="#">Контакты</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p>+7 (999) 999-99-99</p>
+                    <p>info@edem.ru</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Эдем. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

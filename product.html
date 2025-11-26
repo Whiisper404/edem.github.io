@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Товар - Эдем</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-links">
+                    <a href="#">Доставка</a>
+                    <a href="#">Оплата</a>
+                    <a href="#">Контакты</a>
+                </div>
+                <div class="auth-links">
+                    <a href="auth.html" id="auth-link">Войти</a>
+                    <a href="profile.html" id="profile-link" style="display:none;">Личный кабинет</a>
+                </div>
+            </div>
+        </div>
+        <div class="main-header">
+            <div class="container">
+                <div class="logo">
+                    <img src="logo.png" alt="Эдем" class="logo-img">
+                    <div class="logo-text">
+                        <h1>Эдем</h1>
+                    </div>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Поиск товаров...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="header-actions">
+                    <a href="auth.html" class="user-icon"><i class="fas fa-user"></i></a>
+                    <a href="cart.html" class="cart-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <div class="container">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="#">Новинки</a></li>
+                    <li><a href="#">Акции</a></li>
+                    <li><a href="#">Бренды</a></li>
+                    <li><a href="#">Подарки</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="breadcrumbs">
+                <a href="index.html">Главная</a> / 
+                <a href="catalog.html">Каталог</a> / 
+                <span id="product-category">Категория</span> / 
+                <span id="product-name">Название товара</span>
+            </div>
+
+            <div class="product-detail">
+                <div class="product-gallery">
+                    <div class="main-image">
+                        <img id="main-product-image" src="" alt="Основное изображение товара">
+                    </div>
+                    <div class="thumbnail-images">
+                    </div>
+                </div>
+
+                <div class="product-info">
+                    <h1 id="product-title">Название товара</h1>
+                    <div class="product-brand" id="product-brand">Бренд</div>
+                    <div class="product-price">
+                        <span class="current-price" id="product-price">0 руб.</span>
+                        <span class="old-price" id="product-old-price"></span>
+                    </div>
+                    <div class="product-rating">
+                        <div class="stars">
+                        </div>
+                        <span class="reviews-count" id="reviews-count">0 отзывов</span>
+                    </div>
+
+                    <div class="product-description">
+                        <p id="product-description">Описание товара</p>
+                    </div>
+                    <div class="product-options">
+                        <div class="option-group">
+                            <label for="product-color">Цвет:</label>
+                            <div class="color-options" id="color-options-detail">
+                            </div>
+                            <div class="selected-color-info" id="selected-color-info" style="margin-top: 8px;">
+                                <span style="font-weight: 500;">Выбранный оттенок: </span>
+                                <span class="selected-color-name" style="font-weight: 600; color: var(--primary);">Красный</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-actions">
+                        <div class="quantity-selector">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" id="quantity" value="1" min="1" max="10">
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                        <button class="btn add-to-cart" id="add-to-cart">Добавить в корзину</button>
+                        <button class="btn btn-outline add-to-favorites"><i class="far fa-heart"></i></button>
+                    </div>
+
+                    <div class="product-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Бренд:</span>
+                            <span class="detail-value" id="detail-brand">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Категория:</span>
+                            <span class="detail-value" id="detail-category">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Артикул:</span>
+                            <span class="detail-value" id="detail-sku">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">В наличии:</span>
+                            <span class="detail-value" id="detail-stock">-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-tabs">
+                <div class="tabs-header">
+                    <button class="tab-btn active" data-tab="description">Описание</button>
+                    <button class="tab-btn" data-tab="specifications">Характеристики</button>
+                    <button class="tab-btn" data-tab="reviews">Отзывы</button>
+                </div>
+                <div class="tabs-content">
+                    <div class="tab-panel active" id="description">
+                        <h3>Подробное описание</h3>
+                        <p id="full-description">Полное описание товара</p>
+                    </div>
+                    <div class="tab-panel" id="specifications">
+                        <h3>Характеристики</h3>
+                        <div class="specs-table" id="specs-table">
+                        </div>
+                    </div>
+                    <div class="tab-panel" id="reviews">
+                        <h3>Отзывы</h3>
+                        <div class="reviews-list" id="reviews-list">
+                        </div>
+                        <button class="btn" id="add-review-btn">Добавить отзыв</button>
+                    </div>
+                </div>
+            </div>
+
+            <section class="related-products">
+                <h2>Похожие товары</h2>
+                <div class="products-grid" id="related-products">
+                </div>
+            </section>
+        </div>
+    </main>
+
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Эдем</h3>
+                    <p>Магазин косметики и парфюмерии с 202- года. Мы предлагаем только качественные товары от проверенных брендов.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Категории</h3>
+                    <ul>
+                        <li><a href="#">Парфюмерия</a></li>
+                        <li><a href="#">Уход за лицом</a></li>
+                        <li><a href="#">Декоративная косметика</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Помощь</h3>
+                    <ul>
+                        <li><a href="#">Доставка и оплата</a></li>
+                        <li><a href="#">Возврат</a></li>
+                        <li><a href="#">Контакты</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p>+7 (999) 999-99-99</p>
+                    <p>info@edem.ru</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Эдем. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

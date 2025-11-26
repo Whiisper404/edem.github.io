@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет - Эдем</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-links">
+                    <a href="#">Доставка</a>
+                    <a href="#">Оплата</a>
+                    <a href="#">Контакты</a>
+                </div>
+                <div class="auth-links">
+                    <a href="auth.html" id="auth-link">Войти</a>
+                    <a href="profile.html" id="profile-link" style="display:none;">Личный кабинет</a>
+                </div>
+            </div>
+        </div>
+        <div class="main-header">
+            <div class="container">
+                <div class="logo">
+                    <img src="logo.png" alt="Эдем" class="logo-img">
+                    <div class="logo-text">
+                        <h1>Эдем</h1>
+                    </div>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Поиск товаров...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="header-actions">
+                    <a href="auth.html" class="user-icon"><i class="fas fa-user"></i></a>
+                    <a href="cart.html" class="cart-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <div class="container">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="#">Новинки</a></li>
+                    <li><a href="#">Акции</a></li>
+                    <li><a href="#">Бренды</a></li>
+                    <li><a href="#">Подарки</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="page-header">
+                <h1>Личный кабинет</h1>
+                <div class="breadcrumbs">
+                    <a href="index.html">Главная</a> / <span>Личный кабинет</span>
+                </div>
+            </div>
+
+            <div class="profile-container">
+                <aside class="profile-sidebar">
+                    <div class="user-info">
+                        <div class="user-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="user-details">
+                            <h3 id="user-name">Имя пользователя</h3>
+                            <p id="user-email">email@example.com</p>
+                        </div>
+                    </div>
+                    <nav class="profile-nav">
+                        <ul>
+                            <li><a href="#" class="active" data-tab="profile">Профиль</a></li>
+                            <li><a href="#" data-tab="orders">Мои заказы</a></li>
+                            <li><a href="#" data-tab="favorites">Избранное</a></li>
+                            <li><a href="#" data-tab="addresses">Адреса доставки</a></li>
+                            <li><a href="#" data-tab="settings">Настройки</a></li>
+                            <li><a href="#" id="logout-btn">Выйти</a></li>
+                        </ul>
+                    </nav>
+                </aside>
+
+                <div class="profile-tab active" id="profile-tab">
+                <h2>Личная информация</h2>
+                <form class="profile-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="profile-name">Имя</label>
+                            <input type="text" id="profile-name" value="Иван">
+                        </div>
+                        <div class="form-group">
+                            <label for="profile-lastname">Фамилия</label>
+                            <input type="text" id="profile-lastname" value="Иванов">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="profile-email">Email</label>
+                        <input type="email" id="profile-email" value="ivan@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="profile-phone">Телефон</label>
+                        <input type="tel" id="profile-phone" value="+7 (999) 123-45-67">
+                    </div>
+                    <div class="form-group">
+                        <label for="profile-birthdate">Дата рождения</label>
+                        <input type="date" id="profile-birthdate" value="1990-01-01">
+                    </div>
+
+                    <div class="form-group skin-type-section">
+                        <label>Тип кожи</label>
+                        <div class="skin-type-options">
+                            <div class="skin-type-card" data-type="normal">
+                                <span>Нормальная</span>
+                            </div>
+                            <div class="skin-type-card" data-type="dry">
+                                <span>Сухая</span>
+                            </div>
+                            <div class="skin-type-card" data-type="oily">
+                                <span>Жирная</span>
+                            </div>
+                            <div class="skin-type-card" data-type="combination">
+                                <span>Комбинированная</span>
+                            </div>
+                            <div class="skin-type-card" data-type="sensitive">
+                                <span>Чувствительная</span>
+                            </div>
+                            <div class="skin-type-card" data-type="problematic">
+                                <span>Проблемная</span>
+                            </div>
+                            <div class="skin-type-card" data-type="all">
+                                <span>Для всех типов</span>
+                            </div>
+                        </div>
+                        <div class="selected-skin-type" id="selected-skin-type">
+                            <span>Выбранный тип: </span>
+                            <strong id="current-skin-type">Не выбран</strong>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn">Сохранить изменения</button>
+                </form>
+            </div>
+
+                    <div class="profile-tab" id="orders-tab">
+                        <h2>История заказов</h2>
+                        <div class="orders-list" id="orders-list">
+                            <div class="empty-orders">
+                                <p>У вас пока нет заказов</p>
+                                <a href="catalog.html" class="btn">Перейти к покупкам</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-tab" id="favorites-tab">
+                        <h2>Избранное</h2>
+                        <div class="favorites-list" id="favorites-list">
+                            <div class="empty-favorites">
+                                <p>В избранном пока нет товаров</p>
+                                <a href="catalog.html" class="btn">Перейти к покупкам</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-tab" id="addresses-tab">
+                        <h2>Адреса доставки</h2>
+                        <div class="addresses-list" id="addresses-list">
+                            <div class="empty-addresses">
+                                <p>У вас нет сохраненных адресов</p>
+                            </div>
+                        </div>
+                        <button class="btn" id="add-address-btn">Добавить адрес</button>
+                    </div>
+
+                    <div class="profile-tab" id="settings-tab">
+                        <h2>Настройки аккаунта</h2>
+                        <form class="settings-form">
+                            <div class="form-group">
+                                <label for="settings-notifications">Уведомления</label>
+                                <div class="checkbox-group">
+                                    <label>
+                                        <input type="checkbox" id="email-notifications" checked>
+                                        Email-уведомления
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" id="sms-notifications">
+                                        SMS-уведомления
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="current-password">Текущий пароль</label>
+                                <input type="password" id="current-password">
+                            </div>
+                            <div class="form-group">
+                                <label for="new-password">Новый пароль</label>
+                                <input type="password" id="new-password">
+                            </div>
+                            <div class="form-group">
+                                <label for="confirm-new-password">Подтверждение нового пароля</label>
+                                <input type="password" id="confirm-new-password">
+                            </div>
+                            <button type="submit" class="btn">Сохранить настройки</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Эдем</h3>
+                    <p>Магазин косметики и парфюмерии с 202- года. Мы предлагаем только качественные товары от проверенных брендов.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Категории</h3>
+                    <ul>
+                        <li><a href="#">Парфюмерия</a></li>
+                        <li><a href="#">Уход за лицом</a></li>
+                        <li><a href="#">Декоративная косметика</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Помощь</h3>
+                    <ul>
+                        <li><a href="#">Доставка и оплата</a></li>
+                        <li><a href="#">Возврат</a></li>
+                        <li><a href="#">Контакты</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p>+7 (999) 999-99-99</p>
+                    <p>info@edem.ru</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Эдем. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

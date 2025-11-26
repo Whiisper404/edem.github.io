@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог - Эдем</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-links">
+                    <a href="#">Доставка</a>
+                    <a href="#">Оплата</a>
+                    <a href="#">Контакты</a>
+                </div>
+                <div class="auth-links">
+                    <a href="auth.html" id="auth-link">Войти</a>
+                    <a href="profile.html" id="profile-link" style="display:none;">Личный кабинет</a>
+                </div>
+            </div>
+        </div>
+        <div class="main-header">
+            <div class="container">
+                <div class="logo">
+                    <img src="logo.png" alt="Эдем" class="logo-img">
+                    <div class="logo-text">
+                        <h1>Эдем</h1>
+                    </div>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Поиск товаров...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="header-actions">
+                    <a href="auth.html" class="user-icon"><i class="fas fa-user"></i></a>
+                    <a href="cart.html" class="cart-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <div class="container">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="#">Новинки</a></li>
+                    <li><a href="#">Акции</a></li>
+                    <li><a href="#">Бренды</a></li>
+                    <li><a href="#">Подарки</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="page-header">
+                <h1>Каталог товаров</h1>
+                <div class="breadcrumbs">
+                    <a href="index.html">Главная</a> / <span>Каталог</span>
+                </div>
+            </div>
+
+            <div class="catalog-container">
+            <aside class="filters">
+                <h3>Фильтры</h3>
+                <div class="filter-content">
+                    <div class="filter-group">
+                        <h4>Категория</h4>
+                        <div class="filter-options">
+                            <label><input type="checkbox" value="perfume"> Парфюмерия</label>
+                            <label><input type="checkbox" value="face"> Уход за лицом</label>
+                            <label><input type="checkbox" value="makeup"> Декоративная косметика</label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4>Бренд</h4>
+                        <div class="filter-options">
+                            <label><input type="checkbox" value="Flower Knows"> Flower Knows</label>
+                            <label><input type="checkbox" value="Round Lab"> Round Lab</label>
+                            <label><input type="checkbox" value="Clio">Clio</label>
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <h4>Тип кожи</h4>
+                        <div class="filter-options">
+                            <label><input type="checkbox" value="normal"> Нормальная</label>
+                            <label><input type="checkbox" value="dry"> Сухая</label>
+                            <label><input type="checkbox" value="oily"> Жирная</label>
+                            <label><input type="checkbox" value="combination"> Комбинированная</label>
+                            <label><input type="checkbox" value="sensitive"> Чувствительная</label>
+                            <label><input type="checkbox" value="problematic"> Проблемная</label>
+                            <label><input type="checkbox" value="all"> Для всех типов</label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4>Цена</h4>
+                        <div class="price-range">
+                            <input type="number" id="min-price" placeholder="0" min="0">
+                            <span>-</span>
+                            <input type="number" id="max-price" placeholder="10000" min="0">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="filter-buttons">
+                    <button class="apply-filters">Применить фильтры</button>
+                    <button class="reset-filters">Сбросить фильтры</button>
+                </div>
+            </aside>
+
+                <section class="products-section">
+                    <div class="products-header">
+                        <div class="sort-options">
+                            <label for="sort">Сортировка:</label>
+                            <select id="sort">
+                                <option value="default">По умолчанию</option>
+                                <option value="price-asc">По возрастанию цены</option>
+                                <option value="price-desc">По убыванию цены</option>
+                                <option value="name">По названию</option>
+                            </select>
+                        </div>
+                        <div class="products-count">
+                            Найдено товаров: <span id="products-count">0</span>
+                        </div>
+                    </div>
+
+                    <div class="products-grid" id="catalog-products">
+                    </div>
+
+                    <div class="pagination">
+                        <button class="prev-page" disabled><i class="fas fa-chevron-left"></i></button>
+                        <span class="page-info">Страница 1 из 1</span>
+                        <button class="next-page" disabled><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Эдем</h3>
+                    <p>Магазин косметики и парфюмерии с 202- года. Мы предлагаем только качественные товары от проверенных брендов.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Категории</h3>
+                    <ul>
+                        <li><a href="#">Парфюмерия</a></li>
+                        <li><a href="#">Уход за лицом</a></li>
+                        <li><a href="#">Декоративная косметика</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Помощь</h3>
+                    <ul>
+                        <li><a href="#">Доставка и оплата</a></li>
+                        <li><a href="#">Возврат</a></li>
+                        <li><a href="#">Контакты</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p>+7 (999) 999-99-99</p>
+                    <p>info@edem.ru</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Эдем. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
